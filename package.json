@@ -1,0 +1,36 @@
+{
+    "name": "qzx-mock-rest-server",
+    "version": "1.0.2",
+    "description": "the test server which use in dev environment, i can recieve rest api and then auto transfer to the direct file",
+    "main": "index.js",
+    "scripts": {
+        "test": "npm run test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zxqian1991/qzx-mock-rest-server.git"
+    },
+    "keywords": [
+        "node",
+        "express",
+        "server",
+        "rest"
+    ],
+    "author": "qianzhixiang",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/zxqian1991/qzx-mock-rest-server/issues"
+    },
+    "dependencies": {
+        "Require": "^1.1.2",
+        "body-parser": "~1.13.2",
+        "cookie-parser": "~1.3.5",
+        "debug": "~2.2.0",
+        "express": "~4.13.1",
+        "jade": "~1.11.0",
+        "morgan": "~1.6.1",
+        "serve-favicon": "~2.3.0",
+        "Console": "^1.0.2"
+    },
+    "homepage": "https://github.com/zxqian1991/qzx-mock-rest-server#readme"
+}
