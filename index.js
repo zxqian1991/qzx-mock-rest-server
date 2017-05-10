@@ -22,8 +22,7 @@ myServer.prototype.start = function(port, host, staticDirectory, serverRoot) {
     port = me.normalizePort(port);
     let app = express();
     me.app = app;
-    app.use(express.static(staticDirectory));
-    myServer.handler(app, serverRoot);
+    myServer.handler(app, serverRoot, staticDirectory);
     app.set('port', port);
     let server = http.createServer(app);
     me.server = server;
@@ -67,7 +66,8 @@ myServer.prototype.listeningHander = function() {
         'port ' + addr.port;
     debug('Listening on ' + bind);
 }
-myServer.handler = function(app, serverRoot) {
+myServer.handler = function(app, serverRoot, staticDirectory, routes) {
+    app.use(express.static(staticDirectory));
     if (app.get('env') === 'development') {
         app.use(function(err, req, res, next) {
             res.status(err.status || 500);
@@ -77,6 +77,14 @@ myServer.handler = function(app, serverRoot) {
             });
         });
     };
+    if (routes && routes instanceof Array) {
+        // 是不是数组的实例
+        routes.forEach((route) => {
+            if (typeof route == "function") {
+                app.use(route);
+            }
+        })
+    }
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(cookieParser());
