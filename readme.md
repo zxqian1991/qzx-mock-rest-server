@@ -50,6 +50,8 @@ let server = new mockServer(port, host, staticDirectory, serverRoot);
 ```javascript
 onst mockServer = require("qzx-mock-rest-server");
 ...
-mockServer.handleMockServer(app,"./server");
+mockServer.handler(app,"./server","./static",[(req,res,next)=>{
+
+}]);
 // app 由上下文传递过来，./server指明了需要监听的目录
 ```

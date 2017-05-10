@@ -67,7 +67,7 @@ myServer.prototype.listeningHander = function() {
     debug('Listening on ' + bind);
 }
 myServer.handler = function(app, serverRoot, staticDirectory, routes) {
-    app.use(express.static(staticDirectory));
+    staticDirectory && app.use(express.static(staticDirectory));
     if (app.get('env') === 'development') {
         app.use(function(err, req, res, next) {
             res.status(err.status || 500);

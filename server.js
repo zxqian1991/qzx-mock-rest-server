@@ -82,5 +82,4 @@ function pathExists(path) {
     } catch (e) {
         return false;
     }
-    return false;
 }
