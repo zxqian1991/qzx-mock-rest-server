@@ -1,6 +1,6 @@
 {
     "name": "qzx-mock-rest-server",
-    "version": "1.0.2",
+    "version": "1.1.4",
     "description": "the test server which use in dev environment, i can recieve rest api and then auto transfer to the direct file",
     "main": "index.js",
     "scripts": {
